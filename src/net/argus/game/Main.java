@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import javax.swing.UIManager;
 
 import net.argus.gui.Look;
-import net.argus.system.InitializedSystem;
+import net.argus.system.InitializationSystem;
 import net.argus.system.UserSystem;
 
 public class Main {
@@ -90,7 +90,13 @@ public class Main {
 	public static double getSpeed() {return speed;}
 	
 	public static void main(String[] args) {
-		InitializedSystem.initSystem(args, UserSystem.getDefaultInitializedSystemManager());
+		String[] a = new String[args.length + 2];
+		for(int i = 0; i < args.length; i++)
+			a[i] = args[i];
+		
+		a[a.length-2] = "-log";
+		a[a.length-1] = "false";
+		InitializationSystem.initSystem(a);
 		Look.chageLook(UIManager.getSystemLookAndFeelClassName());
 		Main main = new Main();
 		main.start();

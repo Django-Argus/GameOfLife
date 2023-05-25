@@ -15,10 +15,9 @@ import net.argus.gui.DialogProgress;
 public class Save extends Properties {
 
 	public Save(String fileName, String extention, File path) {
-		super(fileName, extention, path);
+		super(new File(path.getAbsolutePath() + "/" + fileName + "." + extention));
 	}
 	
-	@SuppressWarnings("deprecation")
 	public void writeSave(List<Tiles> tiles) throws IOException {
 		clear();
 		for(int i = 0; i < tiles.size();i ++) {
@@ -32,8 +31,8 @@ public class Save extends Properties {
 		
 		DialogProgress dp = new DialogProgress("Loading the pattern", Display.getContentPane());
 		
-		dp.show(0, getNumberLine(), "tiles loaded", true);
-		for(int i = 0; i < getNumberLine(); i++) {
+		dp.showDialog(0, super.toArray().length, "tiles loaded");
+		for(int i = 0; i < super.toArray().length; i++) {
 			Point p = getPoint("tile" + i + ".coord");
 			tiles.add(new Cell((int) p.getX(), (int) p.getY()));
 			dp.setValue(i);

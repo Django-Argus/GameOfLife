@@ -2,10 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/Django/Document 1/Git/Cardinal-System/build/libs/Cardinal-System.jar" sourcepath="D:/Django/Document 1/Git/Cardinal-System">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Cardinal-System/src/main/resources"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="lib/Cardinal-System.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

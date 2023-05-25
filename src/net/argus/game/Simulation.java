@@ -24,6 +24,7 @@ import net.argus.file.Properties;
 import net.argus.game.save.Save;
 import net.argus.game.tiles.Cell;
 import net.argus.game.tiles.Tiles;
+import net.argus.instance.Instance;
 
 public class Simulation {
 	
@@ -56,7 +57,7 @@ public class Simulation {
 		sp.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
 		pan.add(sp);
 		
-		config = new Properties("config", "");
+		config = new Properties("config", "", Instance.SYSTEM);
 		
 		int[] numCre = config.getMultiInteger("create");
 		
